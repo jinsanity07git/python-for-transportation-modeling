@@ -131,3 +131,4 @@ dmypy.json
 course-content/geographic-analysis/cache
 course-content/tabular-analysis/*.csv.gz
 course-content/tabular-analysis/*.dbf
+course-content/choice-modeling/tmp/

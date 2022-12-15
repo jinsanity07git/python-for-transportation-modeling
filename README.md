@@ -33,7 +33,10 @@ Click here to open these tutorials online in Binder: [![Binder](https://mybinder
 conda env export --name dscc > dscc.yml
 ```
 
-# installation
+### setup
+* create a 'tmp' folder under 'course-content/choice-modeling'
+
+##### installation(optional)
 raise ImportError("larch cannot be installed with pip, try installing using conda-forge instead.\nSee https://larch.newman.me/v5.7.0/intro.html for instructions.")
 
 ```
@@ -41,6 +44,7 @@ conda install -c conda-forge larch==5.3
 ```
 
 https://anaconda.org/conda-forge/larch/files?version=5.3.0&page=4
+
 
 
 

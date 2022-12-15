@@ -4,7 +4,7 @@
 # or to install direction from the web
 #  conda env create camsys/tt
 
-name: tt
+name: dscc
 
 channels:
 - conda-forge
