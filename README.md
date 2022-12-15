@@ -27,3 +27,36 @@ on your local machine** beyond a standard web browser, which you
 undoubtedly already have.
 
 Click here to open these tutorials online in Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jpn--/python-for-transportation-modeling.git/v1.0.1?filepath=course-content)
+
+## update envrioment yml
+```
+conda env export --name dscc > dscc.yml
+```
+
+# installation
+raise ImportError("larch cannot be installed with pip, try installing using conda-forge instead.\nSee https://larch.newman.me/v5.7.0/intro.html for instructions.")
+
+```
+conda install -c conda-forge larch==5.3
+```
+
+https://anaconda.org/conda-forge/larch/files?version=5.3.0&page=4
+
+
+
+```
+import sys
+import os
+sys.path.insert(0, os.path.abspath('../../example-package/'))
+import transportation_tutorials as tt
+```
+
+* https://pypi.org/project/osmnx/
+```
+pip install osmnx
+```
+
+https://pypi.org/project/contextily/
+```
+contextily
+```
