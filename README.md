@@ -31,22 +31,38 @@ Click here to open these tutorials online in Binder: [![Binder](https://mybinder
 ## update envrioment yml
 ```
 conda env export --name dscc > dscc.yml
+
+conda env export --name arboretum > conda-environments/arboretum_linux.yml
 ```
 
 ### setup
 * create a 'tmp' folder under 'course-content/choice-modeling'
+```
+mkdir course-content/choice-modeling/tmp
+```
 
 ##### installation(optional)
 raise ImportError("larch cannot be installed with pip, try installing using conda-forge instead.\nSee https://larch.newman.me/v5.7.0/intro.html for instructions.")
 
 ```
+- pandas >=1.2,<1.5
 conda install -c conda-forge larch==5.3
+
+conda install -c conda-forge larch==5.7.0
+pip install kaleido==0.2.1
 ```
 
 https://anaconda.org/conda-forge/larch/files?version=5.3.0&page=4
 
-
-
+### git config
+[github  username setting](https://docs.github.com/en/get-started/getting-started-with-git/setting-your-username-in-git?platform=linux)
+```
+git config --global user.email "aaa"
+git config --global user.email "@qq.com"
+```
+* `conda install gh --channel conda-forge`
+* [Github CLI login](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git#github-cli)
+* * `gh auth login`
 
 ```
 import sys
