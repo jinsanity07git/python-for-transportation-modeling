@@ -239,6 +239,7 @@ dependencies:
   - zstd=1.5.2=h3eb15da_6
   - pip:
     - affine==2.4.0
+    - autograd==1.5
     - branca==0.6.0
     - brotlipy==0.7.0
     - cffi==1.15.1
@@ -249,9 +250,11 @@ dependencies:
     - cryptography==40.0.2
     - debugpy==1.6.7
     - docutils==0.20.1
+    - fastjsonschema==2.16.3
     - fiona==1.9.4
     - folium==0.14.0
     - fonttools==4.39.4
+    - future==0.18.3
     - geographiclib==2.0
     - geopandas==0.13.0
     - geopy==2.3.0
@@ -265,6 +268,7 @@ dependencies:
     - markupsafe==2.1.2
     - matplotlib==3.7.1
     - mercantile==1.2.1
+    - nbformat==5.8.0
     - numba==0.56.4
     - numexpr==2.8.4
     - numpy==1.23.5
