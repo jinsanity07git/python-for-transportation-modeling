@@ -4,24 +4,7 @@ import nbformat
 from traitlets import Integer
 from traitlets.config import Config
 from nbconvert.preprocessors import Preprocessor
-
-from jinja2 import DictLoader
-from jupyterthemes import jtplot
-jtplot.style(theme='onedork')
-
-dl = DictLoader(
-    {
-        'matrix': """
-{%- extends 'lab/index.html.j2' -%}
-
-{% block footer %}
-matrix 出品
-{% endblock footer %}
-"""
-    }
-)
-
-
+from temp import dl
 
 
 # Load the notebook file
@@ -32,7 +15,8 @@ with open(notebook_path, 'r', encoding='utf-8') as file:
 # Process the notebook
 
 print (len(jake_notebook) , [k for k,v in jake_notebook.items()])
-jake_notebook["cells"] =  jake_notebook["cells"][:12]
+
+jake_notebook["cells"] =  jake_notebook["cells"][:3] + jake_notebook["cells"][19:20]
 
 print('Notebook loaded!')
 # Execute the notebook
@@ -53,11 +37,17 @@ print('Notebook successfully run to the end')
 # html_exporter = HTMLExporter(extra_loaders=[dl], template_file='footer')
 # html_exporter = HTMLExporter(extra_loaders=[dl], template_file='matrix',theme="dark")
 # html_exporter = HTMLExporter(template_name='lab',theme="dark") #reveal
-html_exporter = HTMLExporter(template_name='matrix',theme="dark") #lab
+# html_exporter = HTMLExporter(template_name='matrix',theme="blue") #lab
+# nbconvert\exporters\html.py
+#pip install jupyterlab_theme_solarized_dark
+# html_exporter = HTMLExporter(template_name='matrix',theme="jupyterlab-theme-solarized-dark") #lab
+html_exporter = HTMLExporter(extra_loaders=[dl],template_name='matrix',theme="jupyterlab-theme-solarized-dark") #lab
 template_paths = html_exporter.template_paths
 
 
 html_exporter.exclude_input = True  # Exclude code input cells
+html_exporter.exclude_output_prompt = True  # Exclude code input cells
+html_exporter.exclude_raw = True
 
 # Convert the notebook to HTML
 html_output, _ = html_exporter.from_notebook_node(jake_notebook)
