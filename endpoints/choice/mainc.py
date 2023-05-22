@@ -6,10 +6,12 @@ from traitlets.config import Config
 from nbconvert.preprocessors import Preprocessor
 
 from jinja2 import DictLoader
+from jupyterthemes import jtplot
+jtplot.style(theme='onedork')
 
 dl = DictLoader(
     {
-        'footer': """
+        'matrix': """
 {%- extends 'lab/index.html.j2' -%}
 
 {% block footer %}
@@ -19,10 +21,6 @@ matrix 出品
     }
 )
 
-import nbconvert.templates
-
-# Get the default template names
-template_names = nbconvert.templates.get_template_names()
 
 
 
@@ -48,7 +46,10 @@ print('Notebook successfully run to the end')
 
 # Configure the HTML exporter
 ## C:\Users\ZJin\anaconda3\envs\dscc\share\jupyter\nbconvert\templates\compatibility\full.tpl
-html_exporter = HTMLExporter(extra_loaders=[dl], template_file='footer')
+# https://nbconvert.readthedocs.io/en/latest/customizing.html
+# https://github.com/dunovank/jupyter-themes
+# html_exporter = HTMLExporter(extra_loaders=[dl], template_file='matrix',theme="dark")
+html_exporter = HTMLExporter(template_name='lab',theme="dark") #reveal
 template_paths = html_exporter.template_paths
 
 
