@@ -48,8 +48,12 @@ print('Notebook successfully run to the end')
 ## C:\Users\ZJin\anaconda3\envs\dscc\share\jupyter\nbconvert\templates\compatibility\full.tpl
 # https://nbconvert.readthedocs.io/en/latest/customizing.html
 # https://github.com/dunovank/jupyter-themes
+# https://blog.jupyter.org/the-templating-system-of-nbconvert-6-47ea781eacd2
+# https://github.com/SylvainCorlay/nbconvert-acme
+# html_exporter = HTMLExporter(extra_loaders=[dl], template_file='footer')
 # html_exporter = HTMLExporter(extra_loaders=[dl], template_file='matrix',theme="dark")
-html_exporter = HTMLExporter(template_name='lab',theme="dark") #reveal
+# html_exporter = HTMLExporter(template_name='lab',theme="dark") #reveal
+html_exporter = HTMLExporter(template_name='matrix',theme="dark") #lab
 template_paths = html_exporter.template_paths
 
 
