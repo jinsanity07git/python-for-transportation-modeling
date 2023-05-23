@@ -80,3 +80,8 @@ https://pypi.org/project/contextily/
 ```
 contextily
 ```
+
+
+### vscode extension
+
+* `/root/.vscode-server/extensions/grapecity.gc-excelviewer-4.2.57`
