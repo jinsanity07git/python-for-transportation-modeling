@@ -5,18 +5,33 @@ from traitlets import Integer
 from traitlets.config import Config
 from nbconvert.preprocessors import Preprocessor
 from temp import dl
-
+import json
+# conda activate arboretum
 
 # Load the notebook file
-notebook_path = './002-estimating-parameters.ipynb'
+# notebook_path = './002-estimating-parameters.ipynb'
+base = '/uos/github/python-for-transportation-modeling/course-content/choice-modeling-cn'
+notebook_path = base + '/002-estimating-parameters.ipynb'
 with open(notebook_path, 'r', encoding='utf-8') as file:
     jake_notebook = nbformat.read(file, as_version=4)
 
+import os
+basepath = os.getcwd()
+print (basepath)
+
+with open("args.json","r") as file:
+  mdic = json.load(file)
+  print (mdic)
 # Process the notebook
 
 print (len(jake_notebook) , [k for k,v in jake_notebook.items()])
 
-jake_notebook["cells"] =  jake_notebook["cells"][:3] + jake_notebook["cells"][19:20]
+# jake_notebook["cells"] =  jake_notebook["cells"][:3] + jake_notebook["cells"][18:23]
+rawnb = jake_notebook["cells"]
+# print (jake_notebook['metadata'])
+jake_notebook['metadata']['path'] = basepath
+# print (jake_notebook.get('metadata', {}).get('path'))
+jake_notebook["cells"] =  rawnb[:3] + rawnb[21:23]
 
 print('Notebook loaded!')
 # Execute the notebook
@@ -24,8 +39,8 @@ print('Notebook loaded!')
 
 executor = ExecutePreprocessor(timeout=-1,kernel_name='python3')  # No timeout
 ## Execute/Run (preprocess): To actually run the notebook we call the method 
-executor.preprocess(jake_notebook, {})
-print('Notebook successfully run to the end')
+executor.preprocess(jake_notebook, {'metadata': {'path': basepath}})
+# print('Notebook successfully run to the end')
 
 
 # Configure the HTML exporter
@@ -41,7 +56,7 @@ print('Notebook successfully run to the end')
 # nbconvert\exporters\html.py
 #pip install jupyterlab_theme_solarized_dark
 # html_exporter = HTMLExporter(template_name='matrix',theme="jupyterlab-theme-solarized-dark") #lab
-html_exporter = HTMLExporter(extra_loaders=[dl],template_name='matrix',theme="jupyterlab-theme-solarized-dark") #lab
+html_exporter = HTMLExporter(extra_loaders=[dl],template_file='matrix',theme="jupyterlab-theme-solarized-dark") #lab
 template_paths = html_exporter.template_paths
 
 
