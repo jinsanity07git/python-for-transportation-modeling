@@ -276,6 +276,7 @@ dependencies:
       - argon2-cffi==23.1.0
       - argon2-cffi-bindings==21.2.0
       - arrow==1.3.0
+      - autograd==1.5
       - bleach==6.1.0
       - click-plugins==1.1.1
       - cligj==0.7.2
@@ -283,6 +284,7 @@ dependencies:
       - defusedxml==0.7.1
       - fastjsonschema==2.20.0
       - fqdn==1.5.1
+      - future==1.0.0
       - geographiclib==2.0
       - geopandas==1.0.1
       - geopy==2.4.1
