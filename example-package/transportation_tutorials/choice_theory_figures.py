@@ -65,14 +65,16 @@ def figure_two_observations(*ignored_arguments):
             ax.scatter(gg.time, gg.cost, label=(ch, mo), marker=marker, color=color)
             ax.annotate(
                 mo,
-                (gg.time, gg.cost),
+                (gg.time.values[0], 
+                 gg.cost.values[0]),
                 textcoords="offset points",
                 xytext=(0, 10),
                 ha="center",
             )
             ax.annotate(
                 ch,
-                (gg.time, gg.cost),
+                (gg.time.values[0], 
+                 gg.cost.values[0]),
                 textcoords="offset points",
                 xytext=(0, -15),
                 ha="center",
@@ -122,7 +124,8 @@ def figure_two_observations_on_field(beta_time=-0.18, beta_cost=-0.1):
             ax.scatter(gg.time, gg.cost, label=(ch, mo), marker=marker, color=color)
             ax.annotate(
                 mo,
-                (gg.time, gg.cost),
+                (gg.time.values[0], 
+                 gg.cost.values[0]),
                 textcoords="offset points",
                 xytext=(0, 10),
                 ha="center",
@@ -130,7 +133,8 @@ def figure_two_observations_on_field(beta_time=-0.18, beta_cost=-0.1):
             )
             ax.annotate(
                 ch,
-                (gg.time, gg.cost),
+                (gg.time.values[0], 
+                 gg.cost.values[0]),
                 textcoords="offset points",
                 xytext=(0, -15),
                 ha="center",
