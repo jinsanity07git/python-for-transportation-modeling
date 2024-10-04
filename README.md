@@ -44,6 +44,9 @@ conda activate arboretum
 conda env export --name dscc > dscc.yml
 
 conda env export --name arboretum > conda-environments/arboretum_linux.yml
+
+conda env export --name arboretum --no-builds > conda-environments/arboretum_codespaces.yml
+
 ```
 
 ### setup
