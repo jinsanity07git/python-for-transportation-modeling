@@ -28,6 +28,17 @@ undoubtedly already have.
 
 Click here to open these tutorials online in Binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jpn--/python-for-transportation-modeling.git/v1.0.1?filepath=course-content)
 
+# 安装 
+## github codespaces
+```
+conda env create -f conda-environments/arboretum_linux.yml
+
+conda init bash
+source /home/codespace/.bashrc
+
+conda activate arboretum
+```
+
 ## update envrioment yml
 ```
 conda env export --name dscc > dscc.yml
