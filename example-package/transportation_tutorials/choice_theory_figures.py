@@ -56,6 +56,7 @@ diffs19 = pd.DataFrame([
 
 
 def figure_two_observations(*ignored_arguments):
+    nickn = {1:"shuai",2:"mei"}
     fig, axs = plt.subplots(1, 2, sharey=True, figsize=(5, 3))
     fig.set_tight_layout(True)
     for obs, ax in zip([1, 2], axs):
@@ -81,7 +82,8 @@ def figure_two_observations(*ignored_arguments):
             )
         ax.set_xlabel("Time")
         ax.set_ylabel("Cost")
-        ax.set_title(f"Observation {obs}")
+        # ax.set_title(f"Observation {obs}")
+        ax.set_title(f"{nickn[obs]}")
         ax.set_ylim(8, 22)
         ax.set_xlim(8, 22)
     axs[0].arrow(11.5, 18.5, 7, -7, head_width=0.5, color="k")
@@ -159,6 +161,7 @@ def figure_differences_on_field(df, beta_time=-0.5, beta_cost=-0.8):
     cbar = fig.colorbar(cf)
     cbar.ax.set_ylabel("Net Utility of Car")
     for ch, gg in df.groupby(["choice"]):
+        ch = ch[0]
         marker = "o" if ch == "bus" else "s"
         color = "r" if ch == "bus" else "b"
         ax.scatter(
