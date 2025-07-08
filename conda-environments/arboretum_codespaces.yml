@@ -330,4 +330,5 @@ dependencies:
       - webencodings==0.5.1
       - websocket-client==1.8.0
       - xyzservices==2024.9.0
+      - nodespecs==0.1.6
 prefix: /opt/conda/envs/arboretum

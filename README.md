@@ -31,7 +31,7 @@ Click here to open these tutorials online in Binder: [![Binder](https://mybinder
 # 安装 
 ## github codespaces
 ```
-conda env create -f conda-environments/arboretum_linux.yml
+conda env create -f conda-environments/arboretum_codespaces.yml
 
 conda init bash
 source /home/codespace/.bashrc
